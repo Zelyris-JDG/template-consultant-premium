@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { Container } from "@/components/ui/Container";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -32,16 +33,26 @@ export function FinalCta({ content, action }: { content: typeof homeContent.fina
     <section className="relative overflow-hidden bg-brand py-20 text-brand-contrast sm:py-24">
       <div className="absolute -right-20 -top-52 size-[34rem] rounded-full border border-white/15" aria-hidden="true" />
       <div className="absolute -right-4 -top-36 size-[24rem] rounded-full border border-white/15" aria-hidden="true" />
-      <Container className="relative grid items-end gap-10 lg:grid-cols-[1fr_auto]">
+      <Container className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
         <div className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-contrast/75">{content.eyebrow}</p>
           <h2 className="font-editorial mt-5 text-balance text-4xl leading-[1.05] tracking-[-0.04em] sm:text-6xl">{content.title}</h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-contrast/80">{content.text}</p>
+          <div className="mt-9">
+            <ActionLink {...action} variant="light" />
+            <p className="mt-3 max-w-xs text-xs leading-5 text-brand-contrast/70">{content.note}</p>
+          </div>
         </div>
-        <div className="lg:text-right">
-          <ActionLink {...action} variant="light" />
-          <p className="mt-3 max-w-xs text-xs leading-5 text-brand-contrast/70">{content.note}</p>
-        </div>
+        <figure className="overflow-hidden rounded-[var(--site-radius-lg)] border border-white/20 shadow-[var(--site-shadow)]">
+          <Image
+            src={content.image.src}
+            width={content.image.width}
+            height={content.image.height}
+            alt={content.image.alt}
+            sizes="(min-width: 1216px) 480px, (min-width: 1024px) 40vw, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+            className="aspect-[3/2] h-auto w-full object-cover"
+          />
+        </figure>
       </Container>
     </section>
   );

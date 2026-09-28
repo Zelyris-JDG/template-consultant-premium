@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import type { homeContent } from "@/content/content";
@@ -34,8 +35,22 @@ export function Cases({ content }: { content: typeof homeContent.cases }) {
   return (
     <section className="section-space border-y border-line bg-surface">
       <Container>
-        <SectionIntro eyebrow={content.eyebrow} title={content.title} />
-        <Disclaimer>{content.disclaimer}</Disclaimer>
+        <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-6">
+          <div>
+            <SectionIntro eyebrow={content.eyebrow} title={content.title} />
+            <Disclaimer>{content.disclaimer}</Disclaimer>
+          </div>
+          <figure className="overflow-hidden rounded-[var(--site-radius-lg)] border border-line bg-background shadow-[var(--site-shadow-soft)]">
+            <Image
+              src={content.image.src}
+              width={content.image.width}
+              height={content.image.height}
+              alt={content.image.alt}
+              sizes="(min-width: 1216px) 568px, (min-width: 1024px) calc(50vw - 3.25rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+              className="aspect-[3/2] h-auto w-full object-cover"
+            />
+          </figure>
+        </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {content.items.map((item, index) => (
             <article key={item.title} className="overflow-hidden rounded-[var(--site-radius-lg)] border border-line bg-surface-strong">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import type { homeContent } from "@/content/content";
@@ -12,6 +13,16 @@ export function Method({ content }: { content: typeof homeContent.method }) {
             <ul className="mt-10 flex flex-wrap gap-2">
               {content.principles.map((principle) => <li key={principle} className="rounded-full border border-white/15 px-4 py-2 text-xs text-dark-muted">{principle}</li>)}
             </ul>
+            <figure className="mt-10 overflow-hidden rounded-[var(--site-radius-lg)] border border-white/15 shadow-[var(--site-shadow)]">
+              <Image
+                src={content.image.src}
+                width={content.image.width}
+                height={content.image.height}
+                alt={content.image.alt}
+                sizes="(min-width: 1024px) 420px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+                className="aspect-[3/2] h-auto w-full object-cover"
+              />
+            </figure>
           </div>
           <ol className="relative grid gap-0 border-t border-white/15">
             {content.steps.map((step) => (
@@ -33,15 +44,20 @@ export function About({ content }: { content: typeof homeContent.about }) {
     <section id={content.id} className="section-space grain border-b border-line bg-surface">
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--site-radius-lg)] border border-line bg-background p-8 shadow-[var(--site-shadow-soft)]">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_48%,var(--site-line)_49%,var(--site-line)_50%,transparent_51%)] opacity-70" aria-hidden="true" />
-            <div className="absolute left-[12%] top-[10%] h-[52%] w-[52%] rounded-full border border-brand" aria-hidden="true" />
-            <div className="absolute bottom-[9%] right-[10%] h-[56%] w-[50%] rounded-t-full bg-brand-soft" aria-hidden="true" />
-            <div className="absolute inset-x-8 bottom-8 z-10 rounded-xl bg-dark p-6 text-brand-contrast shadow-[var(--site-shadow)]">
-              <span className="font-editorial text-5xl">CR</span>
-              <p className="mt-3 text-[0.65rem] font-semibold uppercase tracking-[0.17em] text-dark-muted">{content.profileLabel}</p>
-            </div>
-          </div>
+          <figure className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--site-radius-lg)] border border-line bg-background shadow-[var(--site-shadow-soft)]">
+            <Image
+              src={content.image.src}
+              width={content.image.width}
+              height={content.image.height}
+              alt={content.image.alt}
+              sizes="(min-width: 640px) 448px, calc(100vw - 2.5rem)"
+              className="size-full object-cover object-[50%_30%]"
+            />
+            <figcaption className="absolute bottom-5 left-5 z-10 rounded-xl bg-dark/90 px-5 py-4 text-brand-contrast shadow-[var(--site-shadow)] sm:bottom-6 sm:left-6">
+              <span className="font-editorial text-3xl">CR</span>
+              <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.17em] text-dark-muted">{content.profileLabel}</p>
+            </figcaption>
+          </figure>
           <div>
             <SectionIntro eyebrow={content.eyebrow} title={content.title} />
             <div className="mt-8 grid gap-5 text-base leading-8 text-muted">{content.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
