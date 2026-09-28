@@ -56,12 +56,14 @@ export const homeContent = {
       { number: "04", title: "Ancrer", text: "Transformer les arbitrages en actions, rythmes de pilotage et nouvelles habitudes de travail." },
     ],
     principles: ["Franchise bienveillante", "Pragmatisme", "Confidentialité", "Transfert d’autonomie"],
+    image: { src: "/images/consultant/consultant-atelier.webp", width: 1536, height: 1024, alt: "Consultante animant un atelier avec deux dirigeants, en désignant des notes adhésives au mur" },
   },
   about: {
     id: "a-propos",
     eyebrow: "À propos",
     title: "Une partenaire de réflexion, pas une experte qui décide à votre place.",
     profileLabel: "Parcours fictif — exemple de contenu",
+    image: { src: "/images/consultant/consultant-portrait.webp", width: 1122, height: 1402, alt: "Portrait de Camille Renaud, consultante, assise dans un fauteuil avec un carnet ouvert, dans un bureau lumineux" },
     paragraphs: [
       "Camille Renaud a construit un parcours fictif de quinze années entre direction de la stratégie, transformation d’organisations et accompagnement de comités de direction.",
       "Son positionnement : faire dialoguer ambition stratégique et réalité du terrain. Elle intervient avec une posture directe, calme et engagée, au service de décisions mieux comprises et mieux exécutées.",
@@ -86,6 +88,7 @@ export const homeContent = {
   cases: {
     eyebrow: "Études de cas",
     title: "Ce que le travail peut mettre en mouvement.",
+    image: { src: "/images/consultant/consultant-entretien.webp", width: 1536, height: 1024, alt: "Consultante à l’écoute d’un dirigeant lors d’un entretien en tête-à-tête autour d’une table basse" },
     disclaimer: "Cas entièrement fictifs, fournis comme exemples de mise en page et de narration.",
     items: [
       { sector: "Industrie · Cas fictif", title: "Réconcilier croissance et maîtrise opérationnelle", context: "Une PME industrielle en forte croissance, fragilisée par des priorités mouvantes et des responsabilités devenues floues.", intervention: "Cap stratégique partagé, nouveau modèle de décision et feuille de route de transformation sur neuf mois.", outcome: "Illustration : un comité de direction réaligné et six chantiers prioritaires dotés d’un pilote clair." },
@@ -118,6 +121,7 @@ export const homeContent = {
     title: "Commençons par mettre les bons mots sur votre enjeu.",
     text: "Un premier message suffit : votre contexte, ce qui vous préoccupe et ce que vous aimeriez voir changer.",
     note: "Ce bouton mène au formulaire ci-dessous, sans réservation automatique.",
+    image: { src: "/images/consultant/consultant-bureau.webp", width: 1536, height: 1024, alt: "Carnet ouvert sur un schéma de réflexion, stylo plume, lunettes et tasse de café sur un bureau en bois baigné de lumière" },
   },
   contact: {
     id: "contact",
